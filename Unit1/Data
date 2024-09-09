@@ -1,0 +1,20 @@
+#Monday 9/9/24
+#Declaring string variable
+course = "Programming & Prototyping"
+fname = "Luna" #string variable
+age = 55  #number variable
+fact = True #boolean variable 
+#Input & Output Functions
+# To output use key word print (lowercase)
+
+print (13) #will print number
+print("hello") #will print a string
+print(True) #will print boolean condition
+
+print(course)#will print value of that variable 
+print("Hello" + fname + "!")
+
+#to Input use the keyword input in lowercase
+Username = input("What's your name" + "?")
+print("Nice to meet you "+ Username + "!") 
+print(Username + " you are registered in " + course)
