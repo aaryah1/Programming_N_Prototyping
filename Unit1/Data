@@ -19,14 +19,5 @@ Username = input("What's your name" + "?")
 print("Nice to meet you "+ Username + "!") 
 print(Username + " you are registered in " + course)
 
-#own code 
-fname = input("What's your first name?")
-lname = input("What's your last name?")
-course = input("What course are you specializing in?")
-grade = input("What grade are you attending?")
-fullname = fname + " " + lname
 
-print("Hello " + fullname + " it's nice to meet you !")
-print("The course you are taking is " + course + " and your grade is " + grade)
-print("Have an awesome year " + fname + "!")
 
