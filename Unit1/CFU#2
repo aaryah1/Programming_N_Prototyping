@@ -1,0 +1,9 @@
+fname = input("What's your first name?")
+lname = input("What's your last name?")
+fullname = fname + " " + lname
+age = input("How old are you?")
+x = input("How many years have you been teaching?")
+
+print("Hello" + " " + fullname + " " + "it's nice to meet you!" + " "
+      "It says you are" + " " + age + "." + " That's cool, I myself am 16." + " "
+      "It's interesting you've been teaching for" + " " + x + " years.")
