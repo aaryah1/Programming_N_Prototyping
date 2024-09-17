@@ -1,8 +1,17 @@
 name = input("What's your name?")
-num1 = input("Type out a number: ")
+num1 = input("Type a number: ")
 num2 = input("Type another number: ")
+print("Hi there " + name + " what a cool name, my name is Aarya, " +
+         "it's nice to meet you.")
+print("I was wondering if you would be able to help me solve math" +
+      " equations by giving me two integers.")
 print((int(num1)) + int((num2)))
 print((int(num1)) - int((num2)))
 print((int(num1)) * int((num2)))
 print((int(num1)) / int((num2)))
 print((int(num1)) % int((num2)))
+print("Thank you so much " + name + " I wouldn't have been able " +
+      " to do these without you.")
+
+
+
