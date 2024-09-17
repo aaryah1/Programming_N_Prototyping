@@ -1,0 +1,8 @@
+name = input("What's your name?")
+num1 = input("Type out a number: ")
+num2 = input("Type another number: ")
+print((int(num1)) + int((num2)))
+print((int(num1)) - int((num2)))
+print((int(num1)) * int((num2)))
+print((int(num1)) / int((num2)))
+print((int(num1)) % int((num2)))
