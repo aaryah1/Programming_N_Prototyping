@@ -1,0 +1,23 @@
+#chaLLenge 1
+length = int(input("Give us a number for the length:"))
+width = int(input("Give us a number for the width:"))
+print("Perimeter of a ", length, "x",  + width, " is")
+print(int(2 * length + 2 * width))
+#challenge 2
+temp1 = int(input("Give us the Fahrenheit temperature:"))
+result = int(round((temp1 - 32) * 5 / 9))
+o_convention = "Celsius"
+print("\nThe temperature in", o_convention, "is", result, "degrees.\n")
+#challenge 3
+t = int(input("Give us the time:"))
+v = int(input("Give us the inital vertical velocity:"))
+print("the vertical distance is ")
+print(int(v * t - 0.5 * 9.8 * t**2))
+#challenge Bonus
+x1 = int(input("Enter value of X1:"))
+y1 = int(input("Enter value of Y1:"))
+x2 = int(input("Enter value of X2:"))
+y2 = int(input("Enter value of Y2:"))
+
+d = ((y2 - y1) ** 2 + (x2 - x1)**2)**0.5)
+print("The distance between two points is %.2f" % d )
