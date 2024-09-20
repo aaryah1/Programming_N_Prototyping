@@ -19,5 +19,5 @@ y1 = int(input("Enter value of Y1:"))
 x2 = int(input("Enter value of X2:"))
 y2 = int(input("Enter value of Y2:"))
 
-d = ((y2 - y1) ** 2 + (x2 - x1)**2)**0.5)
+d = ((y2 - y1) ** 2 + (x2 - x1)**2**0.5)
 print("The distance between two points is %.2f" % d )
