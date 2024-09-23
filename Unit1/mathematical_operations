@@ -1,0 +1,11 @@
+'''
+This program calculates the perimetere of a rectangle
+using input from the user
+'''
+
+# getting the length from the user
+length = int(input("What is the length of the rectangle?"))
+width = 
+
+perimeter = 2 * (length + width)
+print("The perimeter is " + str(perimeter))
