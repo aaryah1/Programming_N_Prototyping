@@ -1,0 +1,10 @@
+import math
+name = input("Hey there, what's your name?")
+a = int(input("Please type your first whole number coefficient fort the a value:"))
+b = int(input("Please type the second whole number coefficient for the b value:"))
+c = int(input("Please type the third whole number coefficient for the c value:"))
+d = b**2-4*a*c
+x1 = (-b-math.sqrt(d))/(2*a)
+x2 = (-b+math.sqrt(d))/(2*a)
+print("Perfecto! The first root we got is " + "x1=" ,x1)
+print("Even better, we got the second root which is " + "x2=" ,x2)
