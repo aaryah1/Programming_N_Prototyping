@@ -1,0 +1,14 @@
+y1 = int(input("Enter the Yards: ")) *3
+f1 = int(input("Enter the Feet: "))
+y2 = int(input("Enter the Yards: ")) *3
+f2 = int(input("Enter the Feet: "))
+print("Yards:", int((y1+y2+f1+f2)/3), "Feet:", int((y1+y2+f1+f2)%3))
+
+
+num1 = int(input("Input the dividend: "))
+num2 = int(input("Input the divisor: "))
+x = num1//num2
+print(x)
+y = num1 % num2
+print(y)
+print (x + y)
