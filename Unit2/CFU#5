@@ -1,0 +1,43 @@
+penny = int(input("How many pennies do you have?"))
+nickel = int(input("How many nickels do you have?"))
+dime = int(input("How many dimes do you have?"))
+quarter = int(input("How many quarters do you have"))
+loonies = int(input("How many loonies do you have?"))
+toonies = int(input("How many toonies do you have?"))
+
+
+penny_in_cents = penny * 1
+nickel_in_cents = nickel * 5
+dimes_in_cents = dime * 10
+quarters_in_cents = quarter * 25
+loonies_in_cents = loonies * 100
+toonies_in_cents = toonies * 200
+
+
+total_cents = penny_in_cents + nickel_in_cents + dimes_in_cents + quarters_in_cents + loonies_in_cents + toonies_in_cents
+total_value = total_cents / 100
+print("Total $",total_value)
+
+
+totalDollars = total_value // 1  
+print("Whole #: $", int(totalDollars))
+
+total_change = total_value - totalDollars 
+print("Change Amount: $", format(total_change, '.2f'))  
+
+change_in_cents = int(total_change * 100)
+
+inQuarts = change_in_cents // 25 
+remaining_cents = change_in_cents % 25  
+
+inDimes = remaining_cents // 10  
+remaining_cents = remaining_cents % 10  
+
+inNickels = remaining_cents // 5 
+inCents = remaining_cents % 5 
+
+print("Quarters:", inQuarts) 
+print("Dimes:", inDimes)       
+print("Nickels:", inNickels)   
+print("Cents:", inCents)
+print(f"You have a total of ${total_value:.2f}. You had {penny} pennies, {nickel} nickels, {dime} dimes, {quarter} quarters, {loonies} loonies, and {toonies} toonies.")
