@@ -1,0 +1,27 @@
+import math 
+import random 
+
+randnum = int(random.randint(1,100))
+num = int(input("Please enter a number: ")) 
+
+sum = str(randnum) + " + " + str(num) + " = " + str(randnum+num) 
+diff = str(randnum) + " - " + str(num) + " = " + str(randnum-num) 
+prod = str(randnum) + " * " + str(num) + " = " + str(randnum*num) 
+quo = str(randnum) + " / " + str(num) + " = " + str(randnum/num)
+remain = str(randnum) + " % " + str(num) + " = " + str(randnum%num) 
+sqrt = "sqrt(" + str(randnum) + ") = " + str(math.sqrt(randnum)) 
+power = str(num) + "^" + str(randnum) + " = " + str(math.pow(num,randnum)) 
+
+randnum = str(randnum)
+num = str(num) 
+sum = str(sum) 
+diff = str(diff) 
+prod = str(prod) 
+quo = str(quo) 
+remain = str(remain) 
+sqrt = str(sqrt)
+power = str(power)
+
+print("Results:\nRandom Number: " + randnum + "\nYour Number: " + num + "\nSum: " + sum + "\nDifference: " 
+      + diff + "\nProduct: " + prod + "\nQuotient: " + quo + "\nRemainder: " + remain + "\nSquare Root of Random Number: " 
+      + sqrt + "\nYour Number to the Power of Random Number: " + power)
