@@ -3,3 +3,13 @@ if num >=5:
     print("Greater than or equal to 5!")
 else:
     print("This number is less than 5!")
+
+#another program
+num = int(input("Give me a number: "))
+if num > 0:
+    print("Number is positive!")
+elif num < 0:
+    print("Number is negative!")
+else:
+    print("Number is 0!")
+    
