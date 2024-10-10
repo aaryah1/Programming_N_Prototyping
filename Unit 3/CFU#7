@@ -1,0 +1,22 @@
+#10/10/24
+
+#Create a program that asks the user for three numbers. The main program should send those three numbers as arguments to a function to calculates and prints “The sum of your three numbers is:  XXX” 
+#The main program should then send those same numbers to a second function which calculates and prints “The average of your three numbers is:  XXX”
+
+
+
+def sum1(num1, num2, num3):
+    sum1 = num1 + num2 + num3
+    print("The sum of your three numbers is: " + str(sum1))
+    
+def average(num1, num2, num3):
+    average = ((num1 + num2 + num3)/3)
+    print("The average of your three numbers is: " + str(average))
+    
+def main():
+     num1 = int(input("Enter a number: "))
+     num2 = int(input("Enter a number: "))
+     num3 = int(input("Enter a number: "))
+     sum1(num1, num2, num3)
+     average(num1, num2, num3)
+main()
