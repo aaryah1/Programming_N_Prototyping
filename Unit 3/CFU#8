@@ -17,7 +17,7 @@ Ex: “The cost per person is $2.50
 '''
 
 deliver = input("Hello User, Have you ordered delivery?")
-if deliver == "yes":
+if deliver == "yes" or deliver == "Yes":
    print("Great!")
    price = float(input("How much did the food cost?"))
    people = int(input("How many people are splitting the order?"))
