@@ -1,0 +1,31 @@
+'''
+10/17/24
+Aarya Haque 
+Guessing Game - Roll of the Dice
+Ask the user “how many rolls do you want to play”
+Have the computer generate a random number
+For each roll, user guesses a random number between 1-6
+They only get one guess per roll
+Give the user +6 pts if they are right, -1 point if wrong 
+Print the final score after all the rolls are played
+'''
+
+import random
+
+num_rolls = int(input("How many rolls do you want to play?"))
+
+score = 0
+
+for x in range(num_rolls):
+    random_roll = random.randint(1,6)
+    
+    
+    guess = int(input(f"roll {x+1}: Guess a number between 1-6:  "))
+if guess == random_roll:
+   score += 6
+   print(f"Correct! You gained +6 points!")
+else:
+    score -= 1
+    print(f"Sorry, that's incorrect. You lost a point!")
+    
+print(f"\nFinal Score: {score}")
