@@ -1,44 +1,51 @@
-""" Aarya, Evelyn, Syeda 10/21/24 Period 5-6 Description: User guesses a random number from 1 to 10, or 1 to 50, or 1 to 1000 and the computer responds if that is high or low until the user gets the answer """ 
+#Aarya, Evelyn, Syeda 10/21/24 Period 5-6 Description: User guesses a random number from 1 to 10, or 1 to 50, or 1 to 1000 and the computer responds if that is high or low until the user gets the answer """
 import random
-import time 
-# Declaring the variables 
-rounds = int(input("How many rounds do you want to play?")) 
-difficulty = input("How difficult do you want it? (1-10, 1-50, 1-1000)") 
-ran_num1 = random.randint(1,10) 
-ran_num2 = random.randint(1,50) 
-ran_num3 = random.randint(1,1000) 
-attempts = 0 
-#function to play the game 
-def attempt(attempts, rounds, difficulty, ran_num1, ran_num2, ran_num3): 
-    if difficulty == "1-10": 
-        random_num = ran_num1 
-    elif difficulty == "1-50": 
-        random_num = ran_num2 
-    else: 
-        random_num = ran_num3 
-        #starts timer 
-        time1 = time.time() 
-        user_guess = int(input("What is your guess?")) 
-    if user_guess == random_num: 
-        print(f"It took you: {attempts} attempts to guess the number") 
-        rounds -= 1 
-        #ends timer and gives response 
-        time2 = time.time() 
-        print('Response time: {:0.2f} seconds'.format(time2-time1))
-    if rounds > 0: 
-        print("\nNew Round") 
-        attempt(attempts, rounds, difficulty, ran_num1, ran_num2, ran_num3) 
+import time
+
+# Function to play a single round
+def play_round(difficulty, round_number):
+    if difficulty == "1-10":
+        random_num = random.randint(1, 10)
+    elif difficulty == "1-50":
+        random_num = random.randint(1, 50)
+    else:  # Assume "1-1000"
+        random_num = random.randint(1, 1000)
+
+    attempts = 0
+    start_time = time.time()  # Start timer for this round
+    return attempt_guess(random_num, attempts, start_time, round_number)
+
+# Function to attempt a guess
+def attempt_guess(random_num, attempts, start_time, round_number):
+    user_guess = int(input("What is your guess? "))
+    attempts += 1
+
+    if user_guess == random_num:
+        end_time = time.time()
+        response_time = end_time - start_time
+        print(f"Correct! It took you {attempts} attempts to guess the number.")
+        print(f'Round {round_number + 1} complete. Response time: {response_time:.2f} seconds\n')
+        return attempts  # Return the number of attempts
+    elif user_guess > random_num:
+        print("Too high!")
+        return attempt_guess(random_num, attempts, start_time, round_number)  # Retry the guess
     else:
-        print("End of game!")
-    else:
-        attempts += 1
-        #ends timer and gives response 
-        time2 = time.time() 
-        print('Response time: {:0.2f} seconds'.format(time2-time1)) 
-    if user_guess > random_num:
-        print("Too high")
-        attempt(attempts, rounds, difficulty, ran_num1, ran_num2, ran_num3)
-    else: 
-        print("Too low") 
-        attempt(attempts, rounds, difficulty, ran_num1, ran_num2, ran_num3) 
-        attempt(attempts, rounds, difficulty, ran_num1, ran_num2, ran_num3)
+        print("Too low!")
+        return attempt_guess(random_num, attempts, start_time, round_number)  # Retry the guess
+
+# Main function to set up the game
+def play_game():
+    rounds = int(input("How many rounds do you want to play? "))
+    difficulty = input("How difficult do you want it? (1-10, 1-50, 1-1000) ")
+
+    total_attempts = 0  # Total attempts for all rounds
+
+    for round_number in range(rounds):
+        attempts = play_round(difficulty, round_number)
+        total_attempts += attempts
+
+    average_attempts = total_attempts / rounds
+    print(f"End of game! You played {rounds} rounds with an average of {average_attempts:.2f} attempts per round.")
+
+# Start the game
+play_game()
