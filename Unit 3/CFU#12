@@ -11,16 +11,45 @@
 #-And then it ends the program
 #Version 2 : 
 #Modify Version 1 so that the User gets only 3 chances.
- #HINTS:  Use a variable to keep track of the number of guesses.
+#HINTS:  Use a variable to keep track of the number of guesses.
 #The User is stuck in the While loop as long as num_guesses < 3 and guess != PW
 
 
-#Version 1
-password = "simonsnyc"
-userInput = input("Enter the password plesse: ")
-
-while password != userInput :
-    print("Sorry that's incorrect :(")
-    userInput = input("Enter Passcode: ")
-
-    print("Correct you may enter")
+#version 1
+def function():
+    password = "simonsnyc"
+    userInput = input("Please enter a password: ")
+    while password != userInput:
+        print("Sorry wrong password")
+        userInput = ("Please enter a password again: ")
+        
+        print("Correct! You may enter")
+        
+#version 2
+def function2():
+    password = "simonsnyc"
+    user_guess = 0
+    max_guess = 3
+    
+    userInput = input("Enter password:")
+    
+    while user_guess < max_guess and password != userInput:
+        print("Wrong Password!")
+        user_guess += 1
+        if user_guess <= max_guess:
+            userInput = input("Enter password: ")
+        
+        if password == userInput:
+            print("Correct password, you may enter!")
+        else:
+            print("sorry please try again!")
+            
+def main():
+    decision = input("Which function do you want to play? 1 or 2?")
+    if decision == '1':
+        function()
+    else:
+        function2()
+        
+main()
+    
