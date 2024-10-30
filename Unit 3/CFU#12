@@ -15,41 +15,34 @@
 #The User is stuck in the While loop as long as num_guesses < 3 and guess != PW
 
 
-#version 1
-def function():
+def v1():
     password = "simonsnyc"
-    userInput = input("Please enter a password: ")
+    userInput = input("Enter Passcode: ")
+    
     while password != userInput:
-        print("Sorry wrong password")
-        userInput = ("Please enter a password again: ")
-        
-        print("Correct! You may enter")
-        
-#version 2
-def function2():
-    password = "simonsnyc"
-    user_guess = 0
-    max_guess = 3
-    
-    userInput = input("Enter password:")
-    
-    while user_guess < max_guess and password != userInput:
         print("Wrong Password!")
-        user_guess += 1
-        if user_guess <= max_guess:
-            userInput = input("Enter password: ")
+        userInput = input("Enter password: ")
         
-        if password == userInput:
-            print("Correct password, you may enter!")
-        else:
-            print("sorry please try again!")
-            
-def main():
-    decision = input("Which function do you want to play? 1 or 2?")
-    if decision == '1':
-        function()
-    else:
-        function2()
-        
-main()
+    print("Corrrect you may enter!")
     
+def v2():
+    password = "simonsnyc"
+    userInput = input("Enter Passcode: ")
+    i = 1
+    
+    while password != userInput and i < 3:
+        print("Wrong Password!")
+        i += 1
+        userInput = input("Enter password: ")
+    if password == userInput:
+        print("Corrrect you may enter!")
+    else:
+        print("Looks like you ran out of chances ")
+
+def main():
+    choice = int(input("which version 1 or 2: "))
+    if choice == 1:
+                 v1()
+    else:
+        v2()
+main()
