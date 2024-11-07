@@ -1,35 +1,24 @@
-'''Start of the program."
-Generate a random number between 1 and 10" (The program randomly picks a number)."
-Initialize attempts = 0" (Set the attempts counter to 0)."
-Prompt user for a guess" (Ask the player to guess a number between 1 and 10)."
-Increase attempts by 1" (Count the user's attempt)."
-Is the guess equal to the random number?" (Check if the guess is correct).
-if YEs
-:Go to the  step where the player is told the number of attempts.
-If NO
-:Continue to the next step to provide feedback."Is the guess too high?"
-(Check if the guess is greater than the random number).
-if YEs
-: "Print 'Too High'" (Inform the player their guess is too high).
-if No
-:"Print 'Too Low'" (Inform the player their guess is too low)."Repeat the process" (Loop back to
-step 4 and ask for another guess)."Print number of attempts taken" 
-(Once the correct guess is made, print how many attempts it took).End of the program.
-'''
-import random 
-def randomNum():
-    return random.randint(1,10)
+"""
+Aarya Haque
+10/21/24
+Period 5-6
+Description: User guesses a random number from 1 to 10 and the computer responds if that is high or low until the 
+"""
+import random
 
-def guess(attempt):
-    user_guess = int(input("What's your guess?"))
-    attempt == 0
-    
-if user_guess == randomNum:
-    print("Your guess was correct")
-    attempt += 1
-    retrun attempt
-elif user_guess > randomNum:
-    print("The guess is too high")
-elif user_guess < ranomNum:
-    print("The guess is too low")
-    
+ran_num = random.randint(1,10)
+attempts = 0
+
+def attempt(ran_num, attempts):
+    user_guess = int(input("What is your guess? 1-10"))
+    if user_guess == ran_num:
+        print(f"It took you: {attempts} attempts to guess the number")
+    else:
+        attempts += 1
+        if user_guess > ran_num:
+            print("Too high")
+            attempt(ran_num, attempts)
+        else:
+            print("Too low")
+            attempt(ran_num, attempts)
+attempt(ran_num, attempts)
