@@ -1,3 +1,27 @@
+#Aarya Haque
+#Periods 5-6
+#12/2/24
+'''Objective:Create a festive Thanksgiving-themed drawing using Python. Your drawing should showcase your creativity while meeting the requirements below.
+
+Instructions:Setup:
+Open CodeSkulptor3 to begin coding.
+Use the simplegui library for graphical elements.
+Canvas 600 width minimum and 400 height minimum
+Theme:
+Your drawing should be Thanksgiving-themed. Ideas include a turkey, fall leaves, pumpkins, or a harvest table.
+Requirements:Your code must include the following elements:
+A frame variable to create and control the canvas.
+A draw_handler function to handle the drawing logic.
+Use the following drawing methods:
+draw_circle
+draw_line
+draw_polygon
+draw_point
+At least one function to modularize your drawing.Use conditionals, loops, or lists for dynamic or repetitive parts of your drawing (e.g., patterns or multiple objects).Enhancements:
+Use color creatively to bring out the Thanksgiving theme.
+Use layering to combine shapes
+'''
+
 import simplegui
 import random
 
