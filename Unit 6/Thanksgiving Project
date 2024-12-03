@@ -79,6 +79,11 @@ def draw_turkey(canvas, x, y):
     draw_body(canvas, x, y)
     draw_feathers(canvas, x, y)
     draw_head(canvas, x, y)
+    
+#Write happy thanksgiving
+def draw_text(canvas):
+
+    draw_text("Happy Thanksgiving", (200, 300), 48, "black")
 
 # Set the draw handler
 frame.set_draw_handler(draw_handler)
