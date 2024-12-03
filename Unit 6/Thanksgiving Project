@@ -28,44 +28,57 @@ import random
 # Create a frame with specified dimensions
 frame = simplegui.create_frame("Thanksgiving Drawing", 600, 400)
 
-# Function to draw a turkey
-def draw_handler(canvas, x, y):
+# Function to draw a turkey's body
+def draw_body(canvas, x, y):
     canvas.draw_circle((x, y), 40, 1, "brown", "brown")
-# Feathers
+
+# Function to draw feathers
 feather_colors = ["red", "orange", "yellow", "green", "blue"]
 
 def draw_feathers(canvas, x, y):
     for i in range(5):
         canvas.draw_circle((x - 50 + i * 20, y - 20), 20, 1, feather_colors[i], feather_colors[i])
-# Head
+
+# Function to draw the turkey's head
 def draw_head(canvas, x, y):
+    # Draw the head (small circle)
     canvas.draw_circle((x, y + 30), 15, 1, "brown", "brown")
+    
+    # Draw the eyes (small white circles with black centers)
     canvas.draw_circle((x - 5, y + 35), 3, 1, "white", "white")
     canvas.draw_circle((x + 5, y + 35), 3, 1, "white", "white")
     canvas.draw_circle((x - 5, y + 35), 1, 1, "black", "black")
     canvas.draw_circle((x + 5, y + 35), 1, 1, "black", "black")
     
-
+    # Draw the beak (triangle)
     canvas.draw_polygon([(x, y + 30), (x + 5, y + 25), (x, y + 25)], 1, "orange", "orange")
 
-# Function to draw pumpkins
+# Function to draw a pumpkin (including the body and the stem)
+def draw_pumpkin(canvas, x, y):
+    # Pumpkin body: A circle with a light orange color
+    canvas.draw_circle((x, y), 40, 1, "orange", "orange")
+    
+    # Stem: A small green rectangle positioned above the pumpkin body
+    canvas.draw_polygon([(250, 250), (350, 250), (300, 300)], 5, "green," "green")
 
-    canvas.draw_circle((x, y), 20, 1, "orange", "orange")
-# Stem
 
-    canvas.draw_rectangle((x - 5, y - 10), (x + 5, y), 1, "green")
-
-# Draw handler function
-
+# Main draw handler function
+def draw_handler(canvas):
+    # Background (sky)
     canvas.draw_polygon([(0, 400), (600, 400), (600, 0), (0, 0)], 1, "lightblue", "lightblue")
-
-# Draw multiple pumpkins
-
+    
+    # Draw multiple pumpkins
     for i in range(5):
         draw_pumpkin(canvas, 100 + i * 100, 300)
-
-# Draw a turkey at a fixed position
+    
+    # Draw a turkey at a fixed position
     draw_turkey(canvas, 300, 200)
+
+# Function to draw a turkey (uses the body, feathers, and head functions)
+def draw_turkey(canvas, x, y):
+    draw_body(canvas, x, y)
+    draw_feathers(canvas, x, y)
+    draw_head(canvas, x, y)
 
 # Set the draw handler
 frame.set_draw_handler(draw_handler)
