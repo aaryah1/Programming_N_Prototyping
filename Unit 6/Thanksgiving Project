@@ -1,0 +1,50 @@
+import simplegui
+import random
+
+# Create a frame with specified dimensions
+frame = simplegui.create_frame("Thanksgiving Drawing", 600, 400)
+
+# Function to draw a turkey
+def draw_handler(canvas, x, y):
+    canvas.draw_circle((x, y), 40, 1, "brown", "brown")
+# Feathers
+feather_colors = ["red", "orange", "yellow", "green", "blue"]
+
+def draw_feathers(canvas, x, y):
+    for i in range(5):
+        canvas.draw_circle((x - 50 + i * 20, y - 20), 20, 1, feather_colors[i], feather_colors[i])
+# Head
+def draw_head(canvas, x, y):
+    canvas.draw_circle((x, y + 30), 15, 1, "brown", "brown")
+    canvas.draw_circle((x - 5, y + 35), 3, 1, "white", "white")
+    canvas.draw_circle((x + 5, y + 35), 3, 1, "white", "white")
+    canvas.draw_circle((x - 5, y + 35), 1, 1, "black", "black")
+    canvas.draw_circle((x + 5, y + 35), 1, 1, "black", "black")
+    
+
+    canvas.draw_polygon([(x, y + 30), (x + 5, y + 25), (x, y + 25)], 1, "orange", "orange")
+
+# Function to draw pumpkins
+
+    canvas.draw_circle((x, y), 20, 1, "orange", "orange")
+# Stem
+
+    canvas.draw_rectangle((x - 5, y - 10), (x + 5, y), 1, "green")
+
+# Draw handler function
+
+    canvas.draw_polygon([(0, 400), (600, 400), (600, 0), (0, 0)], 1, "lightblue", "lightblue")
+
+# Draw multiple pumpkins
+
+    for i in range(5):
+        draw_pumpkin(canvas, 100 + i * 100, 300)
+
+# Draw a turkey at a fixed position
+    draw_turkey(canvas, 300, 200)
+
+# Set the draw handler
+frame.set_draw_handler(draw_handler)
+
+# Start the frame
+frame.start()
