@@ -1,0 +1,116 @@
+#Aarya Haque
+#Period 5-6
+#12/117/24
+
+import simplegui
+import random
+
+# Global variable to control the bird's position
+bird_position = 200
+
+# Define the draw handler function
+def draw_handler(canvas):
+    global bird_position
+    
+    # Drawing the snowman (5 circles)
+    canvas.draw_circle((300, 400), 60, 2, "White", "White")  # bottom body
+    canvas.draw_circle((300, 300), 50, 2, "White", "White")  # middle body
+    canvas.draw_circle((300, 220), 40, 2, "White", "White")  # head
+    canvas.draw_circle((290, 210), 5, 2, "Black", "Black")  # left eye
+    canvas.draw_circle((310, 210), 5, 2, "Black", "Black")  # right eye
+
+    # Drawing the bird (5 polygons)
+    # Bird body (polygon for wings)
+    canvas.draw_polygon([(bird_position, 150), (bird_position + 20, 140), (bird_position + 40, 150), 
+                         (bird_position + 20, 160)], 1, "Black", "Red")  # right wing
+    canvas.draw_polygon([(bird_position, 150), (bird_position - 20, 140), (bird_position - 40, 150), 
+                         (bird_position - 20, 160)], 1, "Black", "Red")  # left wing
+    # Bird's beak (polygon)
+    canvas.draw_polygon([(bird_position + 10, 160), (bird_position + 15, 170), (bird_position + 20, 160)], 
+                         1, "Black", "Orange")  # beak
+
+    # Drawing lines (5 lines)
+    # Snowman arms (lines)
+    canvas.draw_line((250, 300), (200, 250), 4, "Brown")  # left arm
+    canvas.draw_line((350, 300), (400, 250), 4, "Brown")  # right arm
+
+    # Hat for the snowman (polygon)
+    canvas.draw_polygon([(280, 190), (320, 190), (320, 180), (280, 180)], 2, "Black", "Black")  # hat top
+    canvas.draw_polygon([(270, 180), (330, 180), (330, 170), (270, 170)], 2, "Black", "Black")  # hat band
+
+    # Snowflakes (using a for loop)
+    for i in range(20):
+        x = random.randint(0, 600)
+        y = random.randint(0, 600)
+        canvas.draw_circle((x, y), random.randint(2, 5), 1, "White", "White")  # snowflakes
+
+    # Moving bird (update bird position using global variable)
+    bird_position += 1
+    if bird_position > 600:
+        bird_position = -20  # Reset bird position if it moves off-screen
+
+# Create the frame
+frame = simplegui.create_frame('Winter Wonderland', 600, 600)
+frame.set_canvas_background("Black")
+
+# Set the draw handler
+frame.set_draw_handler(draw_handler)
+
+# Start the frame
+frame.start()
+import simplegui
+import random
+
+# Global variable to control the bird's position
+bird_position = 200
+
+# Define the draw handler function
+def draw_handler(canvas):
+    global bird_position
+    
+    # Drawing the snowman (5 circles)
+    canvas.draw_circle((300, 400), 60, 2, "White", "White")  # bottom body
+    canvas.draw_circle((300, 300), 50, 2, "White", "White")  # middle body
+    canvas.draw_circle((300, 220), 40, 2, "White", "White")  # head
+    canvas.draw_circle((290, 210), 5, 2, "Black", "Black")  # left eye
+    canvas.draw_circle((310, 210), 5, 2, "Black", "Black")  # right eye
+
+    # Drawing the bird (5 polygons)
+    # Bird body (polygon for wings)
+    canvas.draw_polygon([(bird_position, 150), (bird_position + 20, 140), (bird_position + 40, 150), 
+                         (bird_position + 20, 160)], 1, "Black", "Red")  # right wing
+    canvas.draw_polygon([(bird_position, 150), (bird_position - 20, 140), (bird_position - 40, 150), 
+                         (bird_position - 20, 160)], 1, "Black", "Red")  # left wing
+    # Bird's beak (polygon)
+    canvas.draw_polygon([(bird_position + 10, 160), (bird_position + 15, 170), (bird_position + 20, 160)], 
+                         1, "Black", "Orange")  # beak
+
+    # Drawing lines (5 lines)
+    # Snowman arms (lines)
+    canvas.draw_line((250, 300), (200, 250), 4, "Brown")  # left arm
+    canvas.draw_line((350, 300), (400, 250), 4, "Brown")  # right arm
+
+    # Hat for the snowman (polygon)
+    canvas.draw_polygon([(280, 190), (320, 190), (320, 180), (280, 180)], 2, "Black", "Black")  # hat top
+    canvas.draw_polygon([(270, 180), (330, 180), (330, 170), (270, 170)], 2, "Black", "Black")  # hat band
+
+    # Snowflakes (using a for loop)
+    for i in range(20):
+        x = random.randint(0, 600)
+        y = random.randint(0, 600)
+        canvas.draw_circle((x, y), random.randint(2, 5), 1, "White", "White")  # snowflakes
+
+    # Moving bird (update bird position using global variable)
+    bird_position += 1
+    if bird_position > 600:
+        bird_position = -20  # Reset bird position if it moves off-screen
+
+# Create the frame
+frame = simplegui.create_frame('Winter Wonderland', 600, 600)
+frame.set_canvas_background("LightBlue")
+
+# Set the draw handler
+frame.set_draw_handler(draw_handler)
+
+# Start the frame
+frame.start()
