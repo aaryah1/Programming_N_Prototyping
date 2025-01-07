@@ -1,0 +1,11 @@
+groceries = ["Eggs", "Apples", "Milk", "Bread"]
+print(groceries[3])
+
+names = ["Hailey", "Marisa", "Emirah", "Mia", "Harbans", "Sharena", "Fahim", "Arafath", "Farhan", "Syeda", "Edwin", "Romina", "Neelam", "Amelia", "Nibrus", "Nafisa", "Malachi", "Sarika", "Angel", "William", "Cesar", "Evelyn"]
+ages = [16.11, 16.11, 16.4, 17.4, 16.7, 16.4, 16.5, 16.5, 16.8, 16.6, 16.6, 17.7, 16.5, 16.11, 16.3, 16.1, 16.7, 16.5, 16.2, 16.1, 16.11, 16.11, 16.4]
+print(names[4:7])
+
+groceries1 = ["Eggs", "Apples", "Milk", "Bread"]
+print(groceries1[0:3])
+
+print("My friend", str(names[3:8]), "is", str(ages[3:8]), "years old.") 
