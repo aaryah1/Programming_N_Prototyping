@@ -1,0 +1,80 @@
+#Aarya Haque
+#1/7/25
+#Period 5-6
+#Version 1: Write a program that adds up all of the prices in this list: [1.95, 4.5, 0.99, 5.99]
+
+#Modify Version 1 to do the following.
+#Create a blank list called prices
+#Populate this list by asking the user how many prices they want to add
+#Have the user enter the price of each item
+#Add up and print out the total amount of everything  
+
+#Modify Version 2 to ask the user for both prices and item names
+#At the end of the program, print them out a receipt with all items, prices, and a total
+
+#Version 1
+prices = [1.95, 4.5, 0.99, 5.99]
+total = 0
+
+for price in prices:
+    total += price
+
+print("Total price:", total)
+
+#Version 2
+# Create an empty list for prices
+prices = []
+
+# Ask the user how many prices they want to add
+num_prices = int(input("How many prices do you want to add? "))
+
+# Loop to collect the prices from the user
+for i in range(num_prices):
+    price = float(input(f"Enter the price of item {i+1}: "))
+    prices.append(price)
+
+# Initialize total variable
+total = 0
+
+# Add up all the prices
+for price in prices:
+    total += price
+
+# Print the total
+print("Total price:", total)
+
+#Version 3
+# Create an empty list for item names and prices
+items = []
+prices = []
+
+# Ask the user how many items they want to add
+num_items = int(input("How many items do you want to add? "))
+
+# Loop to collect item names and prices from the user
+for i in range(num_items):
+    item_name = input(f"Enter the name of item {i+1}: ")
+    price = float(input(f"Enter the price of {item_name}: "))
+    
+    # Append item names and prices to the respective lists
+    items.append(item_name)
+    prices.append(price)
+
+# Initialize total variable
+total = 0
+
+# Print the receipt header
+print("\n--- Receipt ---")
+print("{:<20} {:>10}".format("Item", "Price"))
+
+# Loop to display each item and its price
+for i in range(num_items):
+    print("{:<20} ${:>9.2f}".format(items[i], prices[i]))
+    total += prices[i]
+
+# Print the total amount
+print("\nTotal: ${:.2f}".format(total))
+
+
+    
+
