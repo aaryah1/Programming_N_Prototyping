@@ -9,3 +9,15 @@ groceries1 = ["Eggs", "Apples", "Milk", "Bread"]
 print(groceries1[0:3])
 
 print("My friend", str(names[3:8]), "is", str(ages[3:8]), "years old.") 
+
+for dog in groceries:
+    print("I need to buy" + dog)
+
+
+groceries.insert(2, "lollipop")
+print(groceries)
+groceries.insert(4, "lol")
+print(groceries)
+
+groceries.remove("Bread")
+print(groceries)
