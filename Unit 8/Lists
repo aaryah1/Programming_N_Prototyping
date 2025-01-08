@@ -1,22 +1,37 @@
 groceries = ["Eggs", "Apples", "Milk", "Bread"]
-print(groceries[3])
+print(groceries)
 
-names = ["Hailey", "Marisa", "Emirah", "Mia", "Harbans", "Sharena", "Fahim", "Arafath", "Farhan", "Syeda", "Edwin", "Romina", "Neelam", "Amelia", "Nibrus", "Nafisa", "Malachi", "Sarika", "Angel", "William", "Cesar", "Evelyn"]
-ages = [16.11, 16.11, 16.4, 17.4, 16.7, 16.4, 16.5, 16.5, 16.8, 16.6, 16.6, 17.7, 16.5, 16.11, 16.3, 16.1, 16.7, 16.5, 16.2, 16.1, 16.11, 16.11, 16.4]
+names = ["Aarya", "Amelia", "Angel", "Arafath", "Cesar", "Edwin", "Emirah", "Evelyn", "Fahim", "Farhan", "Hailey", "Harbans", "Malachi", "Marisa", "Neelam", "Nibrus", "Romina", "Sarika", "Sharena", "Syeda", "William"]
+ages = [16.7, 16.3, 16.1, 16.5, 16.11, 16.6, 17.4, 16.4, 16.5, 16.8, 16.11, 16.7, 16.5, 16.11, 16.11, 16.1, 17.7, 16.2, 16.4, 16.4, 16.11]
 print(names[4:7])
-
-groceries1 = ["Eggs", "Apples", "Milk", "Bread"]
-print(groceries1[0:3])
-
-print("My friend", str(names[3:8]), "is", str(ages[3:8]), "years old.") 
+print("My Friend " + str(names[0:2]) + " is " + str(ages[0:2]) + " years old")
 
 for dog in groceries:
-    print("I need to buy" + dog)
+    print("I need to buy " + dog)
+
+for i in range(len(names)):
+    print("My Friend " + names[i] + " is " + str(ages[i]) + " years old")
+print(groceries.append("Carrot"))
 
 
-groceries.insert(2, "lollipop")
+groceries = ["Eggs", "Apples", "Milk", "Bread"]
 print(groceries)
-groceries.insert(4, "lol")
+
+names = ["Nafisa", "Amelia", "Angel", "Arafath", "Cesar", "Edwin", "Emirah", "Evelyn", "Fahim", "Farhan", "Hailey", "Harbans", "Malachi", "Marisa", "Neelam", "Nibrus", "Romina", "Sarika", "Sharena", "Syeda", "William"]
+ages = [16.7, 16.3, 16.1, 16.5, 16.11, 16.6, 17.4, 16.4, 16.5, 16.8, 16.11, 16.7, 16.5, 16.11, 16.11, 16.1, 17.7, 16.2, 16.4, 16.4, 16.11]
+print(names[4:7])
+print("My Friend " + str(names[0:2]) + " is " + str(ages[0:2]) + " years old")
+
+for dog in groceries:
+    print("I need to buy " + dog)
+
+for i in range(len(names)):
+    print("My Friend " + names[i] + " is " + str(ages[i]) + " years old")
+
+print(groceries.append("Carrot"))
+print(groceries)
+
+groceries.insert(5,"lolipop")
 print(groceries)
 
 groceries.remove("Bread")
