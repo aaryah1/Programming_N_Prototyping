@@ -29,5 +29,5 @@ def formating(box):
         box = box.upper()
         print(box)
     else:
-        print("Not a valid option")
+        print("invalid")
 formating(box)
