@@ -1,0 +1,10 @@
+import math  # we need this to do the circle math stuff
+
+# this finds the space inside a ball
+def volume(radius):  
+    x = (4/3) * math.pi * (radius ** 3)  # this is the special way to find how big the inside of a ball is
+    return x  # this gives back the answer
+
+r = volume(5)  # we are finding the inside size of a ball that is 5 big
+
+print(f"The volume of the sphere is {r:.2f}")  # this tells us the answer but makes it look nice
