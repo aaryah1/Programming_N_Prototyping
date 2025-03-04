@@ -1,0 +1,10 @@
+def w_cost(copies):  
+    bookPrice = 24.95  # this is how much one book costs  
+    shipFirst = 3  # the first book costs this much to send  
+    shipAfter = 0.75  # every book after the first one costs this much to send  
+    discount = 0.40  # bookstores get a discount, so they don't pay full price  
+    bookTotal = (bookPrice * (1 - discount)) * copies  # this finds how much all the books cost with the discount  
+    shipcost = shipFirst + (shipAfter * (copies - 1))  # this finds the total shipping cost  
+    Total = bookTotal + shipcost  # this adds the books and the shipping together  
+    print(f"The total wholesale price is ${Total:.2f}")  # this shows how much everything costs  
+w_cost(60)  # we are buying 60 books 
