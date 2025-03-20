@@ -1,0 +1,53 @@
+#Aarya HAque
+#Period 5-6
+#3/19/25
+
+import turtle
+import math
+
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50
+    t.forward(length * n)
+    t.left(angle)
+    draw(t, length, n - 1)
+    t.right(2 * angle)
+    draw(t, length, n - 1)
+    t.left(angle)
+    t.backward(length * n)
+
+def square():
+    for i in range(4):
+        t.forward(50)
+        t.left(90)
+
+def square2(length):
+    for i in range(4):
+        t.forward(length)
+        t.left(90)
+
+def polygon(t, length, n):
+    for i in range(n):
+        t.forward(length)
+        t.left(360 / n)
+
+def circle(t, r):
+    circumference = 2 * math.pi * r
+    n = 50  
+    length = circumference / n
+    polygon(t, length, n)
+
+t = turtle.Turtle()
+t.speed(10)
+bob = turtle.Turtle()
+bob.speed(5)
+bob.delay = 0.01  
+
+draw(bob, 10, 5)
+square()
+square2(100)
+polygon(t, 50, 6)
+circle(bob, 75) 
+
+turtle.done()
