@@ -1,0 +1,58 @@
+#Aarya Haque
+#Period 5-6
+#3/21/24
+
+import turtle
+import math
+
+def draw(t, length, n):
+    if n == 0:
+        return
+    angle = 50
+    t.forward(length * n)
+    t.left(angle)
+    draw(t, length, n - 1)
+    t.right(2 * angle)
+    draw(t, length, n - 1)
+    t.left(angle)
+    t.backward(length * n)
+
+def square():
+    for i in range(4):
+        t.forward(50)
+        t.left(90)
+
+def square2(length):
+    for i in range(4):
+        t.forward(length)
+        t.left(90)
+
+def polygon(t, length, n):
+    for i in range(n):
+        t.forward(length)
+        t.left(360 / n)
+
+def arc(t, r, angle):
+    # Number of segments to draw the arc based on the angle
+    n = 50  # number of segments for a full circle
+    arc_length = 2 * math.pi * r * (angle / 360)  # Fraction of the full circumference
+    length = arc_length / n  # Length of each segment
+    steps = int(n * (angle / 360))  # Number of steps to draw based on the angle
+
+    for _ in range(steps):
+        t.forward(length)
+        t.left(angle / n)  # Adjust the angle to ensure the arc is drawn correctly
+
+t = turtle.Turtle()
+t.speed(10)
+bob = turtle.Turtle()
+bob.speed(5)
+bob.delay = 0.01  
+
+draw(bob, 10, 5)
+square()
+square2(100)
+polygon(t, 50, 6)
+arc(bob, 75, 360)  # Draw a full circle (360 degrees)
+
+turtle.done()
