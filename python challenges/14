@@ -1,0 +1,56 @@
+#Aarya Haque 
+#Period 5-6
+#4/1/25
+
+# Import the turtle module to use its graphics functionality
+import turtle
+
+# Define the draw_spiral function that draws an Archimedean spiral
+def draw_spiral(t, n, length, a, b):
+    """
+    Arguments:
+      n: how many line segments to draw
+      length: how long each segment is
+      a: how loose the initial spiral starts out (larger is looser)
+      b: how loosely coiled the spiral is (larger is looser)
+    """
+    
+    # Initialize the angle (theta) to 0.0
+    theta = 0.0
+    
+    # Loop to draw 'n' line segments
+    for _ in range(n):
+        t.forward(length)  # Move the turtle forward by the specified length
+        
+        # Calculate the change in angle (dtheta) based on the formula 1 / (a + b * theta)
+        dtheta = 1 / (a + b * theta)
+        
+        # Turn the turtle left by the calculated angle (dtheta)
+        t.left(dtheta)
+        
+        # Update the angle (theta) for the next iteration
+        theta += dtheta
+
+        # Optional: Change color gradually as the spiral draws
+        t.pencolor((theta % 360) / 360, 1, 1)  # Create a rainbow effect based on the angle
+
+        # Increase the length for the next segment to make the spiral grow
+        length += 0.05
+
+# Create a turtle object named pepito
+pepito = turtle.Turtle()
+
+# Create a screen object to control the turtle window
+screen = turtle.Screen()
+
+# Set the background color of the turtle graphics window to red
+screen.bgcolor("red")
+
+# Call the draw_spiral function with the turtle object 'pepito' and 1000 line segments
+draw_spiral(pepito, n=1000, length=1, a=0.05, b=0.1)
+
+# Hide the turtle after drawing the spiral
+pepito.hideturtle()
+
+# Keep the window open until clicked
+screen.exitonclick()
