@@ -1,0 +1,63 @@
+#Aarya Haque 
+#Period 5-6
+#4/2/25
+
+# Import the turtle module to use its graphics functionality
+import turtle
+
+# Function to draw a Koch curve of a given length
+def koch_curve(length):
+    # The function checks if the length is smaller than 3, in which case it draws a straight line
+    if length < 3:
+        turtle.forward(length)
+    else:
+        # Otherwise, it recursively breaks down the curve into smaller segments
+        # Recursively draw the first third of the curve
+        koch_curve(length / 3)
+        # Turn the turtle left by 60 degrees
+        turtle.left(60)
+        # Recursively draw the second third of the curve
+        koch_curve(length / 3)
+        # Turn the turtle right by 120 degrees
+        turtle.right(120)
+        # Recursively draw the third third of the curve
+        koch_curve(length / 3)
+        # Turn the turtle left by 60 degrees
+        turtle.left(60)
+        # Recursively draw the final third of the curve
+        koch_curve(length / 3)
+
+# Function to draw a snowflake by drawing three Koch curves
+def draw_snowflake(side_length):
+    # Loop 3 times to draw 3 sides of the snowflake
+    for _ in range(3):
+        # Draw a single Koch curve with the specified length
+        koch_curve(side_length)
+        # Turn the turtle right by 120 degrees to form the snowflake shape
+        turtle.right(120)
+
+# Create a turtle object named pepito to draw
+pepito = turtle.Turtle()
+
+# Create a screen object to control the turtle window
+screen = turtle.Screen()
+
+# Set the background color of the turtle graphics window to white
+screen.bgcolor("white")
+
+# Set the speed of the turtle to the fastest setting
+pepito.speed(0)
+
+# Move the turtle to an appropriate starting position without drawing
+pepito.penup()
+pepito.goto(-150, 90)  # Start at a position so the snowflake fits on the screen
+pepito.pendown()
+
+# Draw the snowflake with a side length of 300 using the snowflake function
+draw_snowflake(300)
+
+# Hide the turtle after drawing is complete
+pepito.hideturtle()
+
+# Keep the window open until it is closed by the user
+screen.mainloop()
