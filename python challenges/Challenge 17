@@ -1,0 +1,28 @@
+#Aarya Haque
+#Period
+#4/6/25
+
+# Define a function named is_power that takes two parameters: a and b.
+def is_power(a, b):
+    # Base case: if a is smaller than b, it cannot be a power of b.
+    if a < b:
+        return False
+
+    # Base case: if a equals b, return True because a is b^1.
+    if a == b:
+        return True
+
+    # Recursive case: check if a is divisible by b.
+    if a % b == 0:
+        # If divisible, divide a by b and recursively check if the quotient is also a power of b.
+        return is_power(a // b, b)
+    
+    # If a is not divisible by b, return False because a cannot be a power of b.
+    return False
+
+# Test cases:
+print(is_power(16, 2))  # Expected output: True, since 16 = 2^4
+print(is_power(27, 3))  # Expected output: True, since 27 = 3^3
+print(is_power(9, 2))   # Expected output: False, because 9 is not divisible by 2
+print(is_power(81, 3))  # Expected output: True, since 81 = 3^4
+print(is_power(32, 5))  # Expected output: False, because 32 is not divisible by 5
