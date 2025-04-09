@@ -1,0 +1,23 @@
+#Aarya Haque
+#Period 5-6
+#4/9/25
+#Description : Create a function that removes the letter e from a word
+
+# Function that checks if the word does not contain the letter 'e'
+def has_no_e(word):
+    return 'e' not in word
+
+# Sample list of words to test
+words = ["apple", "banana", "cherry", "fig", "grape", "kiwi", "plum", "mango"]
+
+# Filter words that do not contain 'e' using the has_no_e function
+words_without_e = [word for word in words if has_no_e(word)]
+
+# Print the words that do not contain 'e'
+print("Words without 'e':", words_without_e)
+
+# Calculate the percentage of words that do not contain 'e'
+total_words = len(words)
+count_without_e = len(words_without_e)
+
+# Display the percentage
