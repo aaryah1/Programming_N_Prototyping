@@ -1,0 +1,25 @@
+#Aarya Haque
+#Period 5-6
+#4/9/25
+#Description: Each line is supposed to find the greatest common 
+#divsor between two numbers given
+
+def gcd(a, b):
+    # Base case: if b is 0, return a because gcd(a, 0) = a
+    if b == 0:
+        return a
+    # Recursive case: call gcd with b and the remainder of a divided by b
+    # This follows the Euclidean algorithm: gcd(a, b) = gcd(b, a % b)
+    return gcd(b, a % b)
+
+# Test cases
+print("GCD of 48 and 18:", gcd(48, 18))  
+# Expected: 6, since 6 is the largest number that divides both 48 and 18
+print("GCD of 56 and 98:", gcd(56, 98))  
+# Expected: 14, since 14 is the largest common divisor of 56 and 98
+print("GCD of 101 and 10:", gcd(101, 10)) 
+# Expected: 1, since 101 and 10 share no common divisors other than 1
+print("GCD of 42 and 56:", gcd(42, 56))   
+# Expected: 14, since 14 divides both 42 and 56
+print("GCD of 17 and 13:", gcd(17, 13))   
+#Expected: 1, since both numbers are prime and have no common divisors except 1
