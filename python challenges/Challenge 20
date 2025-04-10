@@ -1,0 +1,77 @@
+#Aarya Haque 
+#Period 5-6
+#Date 4/9/25
+#Description: In this challenge, you will write a Python program by hand to filter 
+#words based on forbidden letters. Follow the structured steps below to guide your coding process
+
+from itertools import combinations
+from string import ascii_lowercase
+
+def avoids(word, forbidden):
+    """Returns True if the word does NOT contain any forbidden letters."""
+    for letter in word:
+        if letter in forbidden:
+            return False
+    return True
+
+def count_allowed_words(word_list, forbidden):
+    """Counts how many words in the list do not contain any forbidden letters."""
+    count = 0
+    for word in word_list:
+        if avoids(word, forbidden):
+            count += 1
+    return count
+
+def load_words(filename):
+    """Loads words from a file into a list."""
+    try:
+        with open(filename, 'r') as file:
+            words = []
+            for line in file:
+                word = line.strip().lower()
+                if word:
+                    words.append(word)
+            return words
+    except FileNotFoundError:
+        print(f"Error: File '{filename}' not found.")
+        return []
+
+def find_best_forbidden_combination(word_list, letters, combination_size=5):
+    """
+    Finds the combination of `combination_size` letters that, when forbidden,
+    eliminates the most words from the list.
+    """
+    max_excluded = 0
+    best_combo = None
+
+    for combo in combinations(letters, combination_size):
+        forbidden = ''.join(combo)
+        excluded = len(word_list) - count_allowed_words(word_list, forbidden)
+        if excluded > max_excluded:
+            max_excluded = excluded
+            best_combo = forbidden
+
+    return best_combo, len(word_list) - max_excluded
+
+def main():
+    # Load word list (update path as needed)
+    word_list = load_words("words.txt")
+
+    if not word_list:
+        print("No words loaded. Exiting.")
+        return
+
+    # Ask user for forbidden letters
+    forbidden = input("Enter forbidden letters: ").strip().lower()
+
+    # Count and display how many words avoid these letters
+    allowed_count = count_allowed_words(word_list, forbidden)
+    print(f"Number of words that don't contain any of the forbidden letters: {allowed_count}")
+
+    # Find best 5-letter forbidden combination
+    best_forbidden, allowed_with_best = find_best_forbidden_combination(word_list, ascii_lowercase)
+    print(f"\nBest 5-letter forbidden set: '{best_forbidden}'")
+    print(f"Number of words that avoid that set: {allowed_with_best}")
+
+if __name__ == "__main__":
+    main()
