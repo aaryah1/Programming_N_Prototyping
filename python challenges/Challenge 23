@@ -1,0 +1,32 @@
+#Aarya Haque
+#Period 5-6
+#4/23/25
+#Description: In this challenge, you'll write a Python program by hand that checks if the 
+#letters in a word appear in alphabetical order. These are called abecedarian words. 
+#Letâ€™s find out how many exist!
+
+
+# Step 1: Define the function
+def is_abecedarian(word):
+    # Compare the original word with its sorted version
+    return list(word) == sorted(word)
+
+# Step 2: Test the function with example words
+print(is_abecedarian("abc"))       # True
+print(is_abecedarian("aegilops"))  # True
+print(is_abecedarian("art"))       # False
+print(is_abecedarian("loop"))      # False
+
+# Step 3: Count abecedarian words from a list
+# Here's a small sample word list; in a real use-case, you might read from a dictionary file
+word_list = [
+    "almost", "biopsy", "chilly", "ghost", "accent", "aegilops",
+    "billowy", "access", "beef", "buzz", "abc", "art", "loop"
+]
+
+count = 0
+for word in word_list:
+    if is_abecedarian(word):
+        count += 1
+
+print("Total abecedarian words:", count)
